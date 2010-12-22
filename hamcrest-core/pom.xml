@@ -13,17 +13,20 @@
  | Be sure to generate source and javadoc jars AFTER packaging to contain the generated class. 
  | Call "mvn clean process-classes package source:jar javadoc:jar".
  | To generate a bundle call "mvn clean process-classes package source:jar javadoc:jar gpg:sign repository:bundle-create"
- -->
+ +-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             http://maven.apache.org/maven-v4_0_0.xsd">
-
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>org.hamcrest</groupId>
+		<artifactId>hamcrest-parent</artifactId>
+		<version>1.3.RC2</version>
+		<relativePath>../hamcrest-parent</relativePath>
+	</parent>
+    
 	<groupId>org.hamcrest</groupId>
 	<artifactId>hamcrest-core</artifactId>
-	<version>1.2.1</version>
-	<packaging>jar</packaging>
 
 	<name>Hamcrest Core</name>
 
@@ -44,84 +47,16 @@
 		</license>
 	</licenses>
 
-	<developers>
-		<developer>
-			<id>joe.walnes</id>
-			<name>Joe Walnes</name>
-			<roles>
-				<role>Developer</role>
-			</roles>
-		</developer>
-		<developer>
-			<id>nat.pryce</id>
-			<name>Nat Pryce</name>
-			<roles>
-				<role>Developer</role>
-			</roles>
-		</developer>
-		<developer>
-			<id>smgfreeman</id>
-			<name>Steve Freeman</name>
-			<roles>
-				<role>Developer</role>
-			</roles>
-		</developer>
-		<developer>
-			<id>neildunn</id>
-			<name>Neil Dunn</name>
-			<roles>
-				<role>Developer</role>
-			</roles>
-		</developer>
-	</developers>
-
 	<scm>
 		<url>http://code.google.com/p/hamcrest/source/browse/</url>
-		<connection>http://hamcrest.googlecode.com/svn/trunk/hamcrest-core</connection>
+		<connection>http://hamcrest.googlecode.com/svn/trunk/hamcrest-java/hamcrest-core</connection>
 	</scm>
 	
-	<properties>
-		<hamcrest.version>1.2</hamcrest.version>
-	</properties>
-
 	<build>
-
-		<resources>
-			<resource>
-				<directory>..</directory>
-				<includes>
-					<include>LICENSE.txt</include>
-				</includes>
-			</resource>
-		</resources>
-
 		<plugins>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.5</version>
-				<executions>
-					<execution>
-						<id>add-source</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>add-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>target/generated-sources</source>
-							</sources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -163,7 +98,7 @@
 							<dependency>
 								<groupId>org.hamcrest</groupId>
 								<artifactId>hamcrest-generator</artifactId>
-								<version>${hamcrest.version}</version>
+								<version>${hamcrest-generator.version}</version>
 							</dependency>
 						</dependencies>
 					</plugin>
