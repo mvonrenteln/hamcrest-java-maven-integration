@@ -1,0 +1,11 @@
+.svn/
+target/
+src/
+lib/
+.*
+!.gitignore
+*.xml
+*.py
+*.txt
+*.html
+*.cm
