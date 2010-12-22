@@ -8,7 +8,7 @@
 
 	<groupId>org.hamcrest</groupId>
 	<artifactId>hamcrest-integration</artifactId>
-	<version>1.2-java5</version>
+	<version>1.2.1</version>
 	<packaging>jar</packaging>
 
 	<name>Hamcrest integration</name>
