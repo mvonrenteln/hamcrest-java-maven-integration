@@ -41,7 +41,7 @@
 
 	<scm>
 		<url>http://code.google.com/p/hamcrest/source/browse/</url>
-		<connection>http://hamcrest.googlecode.com/svn/trunk/hamcrest-java/hamcrest-core</connection>
+		<connection>scm:svn:http://hamcrest.googlecode.com/svn/trunk/hamcrest-java/hamcrest-core</connection>
 	</scm>
 	
 	<properties>
