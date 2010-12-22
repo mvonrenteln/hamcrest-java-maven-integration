@@ -75,9 +75,9 @@
 	</scm>
 	
 	<properties>
-		<hamcrest.version>1.2.1</hamcrest.version>
+		<hamcrest.version>1.3.RC2</hamcrest.version>
 		<hamcrest-core.version>${hamcrest.version}</hamcrest-core.version>
-		<hamcrest-generator.version>1.2</hamcrest-generator.version>
+		<hamcrest-generator.version>${hamcrest.version}</hamcrest-generator.version>
 		<hamcrest-library.version>${hamcrest.version}</hamcrest-library.version>
 		
 		<!-- external dependencies -->
