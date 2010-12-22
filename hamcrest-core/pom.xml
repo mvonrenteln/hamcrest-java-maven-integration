@@ -52,15 +52,11 @@
 		<connection>http://hamcrest.googlecode.com/svn/trunk/hamcrest-java/hamcrest-core</connection>
 	</scm>
 	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
+	<properties>
+		<generator.config>../core-matchers.xml</generator.config>
+		<generated.class>org.hamcrest.CoreMatchers</generated.class>
+	</properties>
+	
 	<profiles>
 		<profile>
 			<id>generate-sources</id>
@@ -72,54 +68,16 @@
 				<plugins>
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>build-helper-maven-plugin</artifactId>
+					</plugin>
+					
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>exec-maven-plugin</artifactId>
-						<version>1.2</version>
-						<executions>
-							<execution>
-								<goals>
-									<goal>java</goal>
-								</goals>
-								<phase>process-classes</phase>
-							</execution>
-						</executions>
-						<configuration>
-						    <includeProjectDependencies>true</includeProjectDependencies>
-							<includePluginDependencies>true</includePluginDependencies>
-							<mainClass>org.hamcrest.generator.config.XmlConfigurator</mainClass>
-							<arguments>
-								<argument>../core-matchers.xml</argument>
-								<argument>src/main/java</argument>
-								<argument>org.hamcrest.CoreMatchers</argument>
-								<argument>target/generated-sources</argument>
-							</arguments>
-							<sourceRoot>target/generated-sources</sourceRoot>
-						</configuration>
-						<dependencies>
-							<dependency>
-								<groupId>org.hamcrest</groupId>
-								<artifactId>hamcrest-generator</artifactId>
-								<version>${hamcrest-generator.version}</version>
-							</dependency>
-						</dependencies>
 					</plugin>
 
 					<plugin>
 						<artifactId>maven-antrun-plugin</artifactId>
-						<version>1.5</version>
-						<executions>
-							<execution>
-								<id>initialize</id>
-								<phase>initialize</phase>
-								<configuration>
-									<target>
-										<mkdir dir="target/generated-sources" />
-									</target>
-								</configuration>
-								<goals>
-									<goal>run</goal>
-								</goals>
-							</execution>
-						</executions>
 					</plugin>
 				</plugins>
 			</build>
