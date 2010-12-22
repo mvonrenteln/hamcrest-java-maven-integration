@@ -45,7 +45,7 @@
 	</scm>
 	
 	<properties>
-		<generator.config>../core-matchers.xml</generator.config>
+		<generator.config>${basedir}/../core-matchers.xml</generator.config>
 		<generated.class>org.hamcrest.CoreMatchers</generated.class>
 	</properties>
 	

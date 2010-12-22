@@ -181,9 +181,9 @@
 							<argument>${generator.config}</argument>
 							<argument>src/main/java</argument>
 							<argument>${generated.class}</argument>
-							<argument>target/generated-sources</argument>
+							<argument>${basedir}/target/generated-sources</argument>
 						</arguments>
-						<sourceRoot>target/generated-sources</sourceRoot>
+						<sourceRoot>${basedir}/target/generated-sources</sourceRoot>
 					</configuration>
 					<dependencies>
 						<dependency>

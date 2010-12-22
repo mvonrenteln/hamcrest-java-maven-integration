@@ -39,7 +39,7 @@
 	</scm>
 	
 	<properties>
-		<generator.config>../matchers.xml</generator.config>
+		<generator.config>${basedir}/../matchers.xml</generator.config>
 		<generated.class>org.hamcrest.Matchers</generated.class>
 	</properties>
 
