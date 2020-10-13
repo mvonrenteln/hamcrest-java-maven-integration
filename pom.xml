@@ -81,7 +81,7 @@
 		<hamcrest-library.version>${hamcrest.version}</hamcrest-library.version>
 		
 		<!-- external dependencies -->
-		<junit.version>3.8.1</junit.version>
+		<junit.version>4.13.1</junit.version>
 		
 		<!-- Plugins -->
 		<build-helper-maven-plugin.version>1.5</build-helper-maven-plugin.version>
